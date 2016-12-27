@@ -1,0 +1,17 @@
+@import "../../../../theme/sass/conf/conf";
+
+.auth-sep2 {
+  text-align: center;
+  position: relative;
+  span {
+    color: #ed6d00;
+  }
+}
+
+select.form-control[multiple] {
+  overflow-y: scroll;
+}
+
+select.form-control {
+  color: $default;
+}

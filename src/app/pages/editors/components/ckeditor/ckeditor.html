@@ -1,0 +1,13 @@
+<ul class="breadcrumb al-breadcrumb">
+    <li class="breadcrumb-item active">最新公告</li>
+    <li class="breadcrumb-item "><a routerLink="/pages/editors/message-contact">工作快遞</a></li>
+</ul>
+<div class="widgets">
+
+  <div class="row">
+    <ba-card title="最新公告" baCardClass="with-scroll">
+      <ng2-smart-table [settings]="settings" [source]="source" (deleteConfirm)="onDeleteConfirm($event)"></ng2-smart-table>
+    </ba-card>
+  </div>
+
+</div>

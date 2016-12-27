@@ -1,0 +1,185 @@
+<ul class="breadcrumb al-breadcrumb">
+    <li class="breadcrumb-item active">出貨管理</li>
+    <li class="breadcrumb-item "><a routerLink="/pages/charts/adjustment">可接單量調整申請</a></li>
+</ul>
+
+<section class="chartist">
+  <div class="row">
+   <h4>出貨管理</h4>
+    <div class="col-md-12">
+      <ba-card title="查詢條件設定" baCardClass="with-scroll">
+
+          <div class="input-group">
+            <span class="input-group-addon input-group-addon-primary" >1. 訂單編號&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</span>
+            <input type="text" class="form-control with-primary-addon" id="input01" placeholder="Text" >
+            <span class="input-group-addon input-group-addon-primary" >至</span>
+            <input type="text" class="form-control with-primary-addon" id="input01" placeholder="Text" >
+          </div>
+
+          <div class="input-group">
+            <span class="input-group-addon input-group-addon-primary" >2. 訂單日期&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</span>
+            <input type="text" class="form-control with-primary-addon" id="input01" placeholder="Text" >
+            <span class="input-group-addon input-group-addon-primary" >至</span>
+            <input type="text" class="form-control with-primary-addon" id="input01" placeholder="Text" >
+          </div>
+
+          <div class="input-group">
+            <span class="input-group-addon input-group-addon-primary">3. 出貨狀態&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</span>
+               <select class="form-control with-primary-addon" id="exampleSelect1">
+                  <option>全部</option>
+                  <option>未出貨</option>
+                  <option>配送中</option>
+                  <option>配送完成</option>
+                  <option>取消訂單</option>
+               </select>
+          </div>
+
+          <div class="input-group">
+            <span class="input-group-addon input-group-addon-primary" > 4. 檔案來源&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</span>
+            <span>
+            <button class="btn btn-danger" type="button">選擇檔案</button>
+            </span>
+            <span class="input-group-addon input-group-addon-primary">
+            <a href="http://tlwtst.testritegroup.com/excelsample/orderqty_mt_import.xls">格式下載</a> 
+            *請上傳.xls檔案</span>
+          </div>
+
+      </ba-card>
+    </div>
+  </div>
+</section>
+
+<div>
+      <button routerLink="/pages/dashboard"  type="submit" class="btn btn-default btn-xm ">查詢</button>
+      <button routerLink="/pages/dashboard" type="submit" class="btn btn-default btn-xm ">清除</button>
+      <button routerLink="/pages/dashboard" type="submit" class="btn btn-default btn-xm ">匯入</button>
+</div><br>
+
+<table class="table table-bordered table-fixed">
+            <thead>
+            <tr>
+              <th >
+                  <label class="radio-inline custom-radio nowrap">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="all">
+                    <span></span>
+                  </label>
+              </th>
+              <th> 廠商編號 </th>
+              <th> 訂單編號 </th>
+              <th> 訂單日期 </th>
+              <th>  門店 </th>
+              <th> 出貨日期 </th>
+              <th> 驗收日期 </th>
+              <th> 出貨狀態 </th>
+              <th> 物流商 </th>
+              <th> 物流編號 </th>
+              <th> 出貨狀態 </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td >
+                  <label class="radio-inline custom-radio nowrap">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option1">
+                    <span></span>
+                  </label>
+              </td>
+              <td>0000192018</td>
+              <td >1940311507</td>
+              <td >2016/01/29</td>
+              <td >1B14 HOLA三重重新店</td>
+              <td ><input type="text" class="form-control with-primary-addon" id="input01" placeholder="Text" ></td>
+              <td> </td>
+              <td >未出貨</td>
+              <td >
+              <select class=" with-primary-addon" id="exampleSelect1">
+                  <option>全部</option>
+                  <option>未出貨</option>
+                  <option>配送中</option>
+                  <option>配送完成</option>
+                  <option>取消訂單</option>
+               </select>
+               </td>
+              <td ><input type="text" class="form-control with-primary-addon" id="input01" placeholder="Text" ></td>
+              <td >未出貨</td>
+            </tr>
+            <tr>
+              <td >
+                  <label class="radio-inline custom-radio nowrap">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <span></span>
+                  </label>
+              </td>
+              <td>0000192018</td>
+              <td >1940311507</td>
+              <td >2016/01/29</td>
+              <td >1B14 HOLA三重重新店</td>
+              <td ><input type="text" class="form-control with-primary-addon" id="input01" placeholder="Text" ></td>
+              <td> </td>
+              <td >未出貨</td>
+              <td >
+              <select class=" with-primary-addon" id="exampleSelect1">
+                  <option>全部</option>
+                  <option>未出貨</option>
+                  <option>配送中</option>
+                  <option>配送完成</option>
+                  <option>取消訂單</option>
+               </select>
+               </td>
+              <td ><input type="text" class="form-control with-primary-addon" id="input01" placeholder="Text" ></td>
+              <td >未出貨</td>
+            </tr>
+            <tr>
+              <td >
+                  <label class="radio-inline custom-radio nowrap">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option3">
+                    <span></span>
+                  </label>
+              </td>
+              <td>0000192018</td>
+              <td >1940311507</td>
+              <td >2016/01/29</td>
+              <td >1B14 HOLA三重重新店</td>
+              <td ><input type="text" class="form-control with-primary-addon" id="input01" placeholder="Text" ></td>
+              <td> </td>
+              <td >未出貨</td>
+              <td >
+              <select class=" with-primary-addon" id="exampleSelect1">
+                  <option>全部</option>
+                  <option>未出貨</option>
+                  <option>配送中</option>
+                  <option>配送完成</option>
+                  <option>取消訂單</option>
+               </select>
+               </td>
+              <td ><input type="text" class="form-control with-primary-addon" id="input01" placeholder="Text" ></td>
+              <td >未出貨</td>
+            </tr>
+            <tr>
+              <td >
+                  <label class="radio-inline custom-radio nowrap">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option4">
+                    <span></span>
+                  </label>
+              </td>
+              <td>0000192018</td>
+              <td >1940311507</td>
+              <td >2016/01/29</td>
+              <td >1B14 HOLA三重重新店</td>
+              <td ><input type="text" class="form-control with-primary-addon" id="input01" placeholder="Text" ></td>
+              <td> </td>
+              <td >未出貨</td>
+              <td >
+              <select class=" with-primary-addon" id="exampleSelect1">
+                  <option>全部</option>
+                  <option>未出貨</option>
+                  <option>配送中</option>
+                  <option>配送完成</option>
+                  <option>取消訂單</option>
+               </select>
+               </td>
+              <td ><input type="text" class="form-control with-primary-addon" id="input01" placeholder="Text" ></td>
+              <td >未出貨</td>
+            </tr>
+          </tbody>
+</table>

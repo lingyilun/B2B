@@ -1,0 +1,286 @@
+<ul class="breadcrumb al-breadcrumb">
+    <li class="breadcrumb-item active">促銷確認單</li>
+</ul>
+
+<section class="chartist">
+  <div class="row">
+   <h4>促銷確認單</h4>
+    <div class="col-md-12">
+      <ba-card title="查詢條件設定" baCardClass="with-scroll">
+        <div class="input-demo radio-demo row">
+            <div class="col-md-4">
+              <label class="radio-inline custom-radio nowrap">
+                <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <span>未列印促銷確認單(含 修改)</span>
+              </label>
+            </div><br>
+            <div class="col-md-4">
+              <label class="radio-inline custom-radio nowrap">
+                <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <span>促銷確認單進階查詢</span>
+              </label>
+            </div>
+        </div><br>
+
+        <div class="input-group">
+        <div class="col-md-3">
+          <label for="input01">1. 促銷確認單號:</label>
+        </div>
+        <div class="col-md-3">
+          <input type="text" class="form-control" id="input01" placeholder="Text" >
+        </div>
+        <div class="col-md-1"> 
+          <span class="input-group-addon" >至</span>
+        </div>  
+        <div class="col-md-3">
+          <input type="text" class="form-control" id="input01" placeholder="Text" >
+        </div>  
+        </div>
+
+        <div class="input-group">
+          <div class="col-md-3">
+            <label for="input01">2. 檔別名稱:</label>
+          </div>
+          <div class="col-md-4">
+          <input type="text" class="form-control" id="input01" placeholder="不分大小寫,空白代表所有檔別" >
+          </div>
+        </div>
+
+        <div class="input-group">
+        <div class="col-md-3">
+          <label for="input01">3. 促銷折扣期間:</label>
+        </div>
+        <div class="col-md-3">
+          <input type="text" class="form-control" [(ngModel)]="myDate" 
+                 ng2-datetime-picker date-only="true" placeholder="點我"/>
+        </div>
+        <div class="col-md-1"> 
+          <span class="input-group-addon" >至</span>
+        </div>  
+        <div class="col-md-3">
+          <input type="text" class="form-control" [(ngModel)]="myDate1" 
+                 ng2-datetime-picker date-only="true" placeholder="點我"/>
+        </div>  
+        </div>
+
+        <div class="input-group">
+            <div class="col-md-3">
+              <label for="input01">4. 廠商編號:</label>
+            </div>
+            <div class="col-md-3">
+            <input type="text" class="form-control with-success-addon">
+            </div>
+            <div class="col-md-1">
+            <span class="input-group-addon">
+            <button class="btn btn-danger" type="button" (click)="number.open()">請選擇</button>
+            </span>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <div class="col-md-3">
+              <label for="input01">5. 回覆狀態:</label>
+            </div>
+
+           <div class="col-md-3">
+            <select class="form-control with-primary-addon" id="exampleSelect1">
+              <option>全部</option>
+              <option>待處理</option>
+              <option>已處理</option>
+            </select>
+           </div>
+
+           <div class="col-md-3">
+           <label for="input01">6. 促銷提案狀態:</label>
+           </div>
+
+           <div class="col-md-3">
+            <select class="form-control with-primary-addon" id="exampleSelect1">
+              <option>全部</option>
+              <option>未結案</option>
+              <option>結案</option>
+            </select>
+           </div>
+        </div>
+        
+        <div class="auth-sep2"><span> ※如挑選查詢條件7或8, 則查詢條件3[促銷折扣期間]為必填</span></div>
+
+        <div class="input-group">
+            <div class="col-md-3">
+              <label for="input01">7. 類別促銷:</label>
+            </div>
+            <div class="col-md-3">
+            <input type="text" class="form-control with-success-addon">
+            </div>
+            <div class="col-md-1">
+            <span class="input-group-addon">
+            <button class="btn btn-danger" type="button" (click)="category.open()">請選擇</button>
+            </span>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <div class="col-md-3">
+              <label for="input01">8. 促銷店別:</label>
+            </div>
+            <div class="col-md-3">
+            <input type="text" class="form-control with-success-addon">
+            </div>
+            <div class="col-md-1">
+            <span class="input-group-addon">
+            <button class="btn btn-danger" type="button" (click)="store.open()">請選擇</button>
+            </span>
+            </div>
+        </div>
+      </ba-card>
+    </div>
+  </div>
+</section>
+
+<div>
+      <button routerLink="/pages/dashboard"  type="submit" class="btn btn-default btn-xm ">查詢</button>
+      <button routerLink="/pages/dashboard" type="submit" class="btn btn-default btn-xm ">清除</button>
+</div>
+
+
+<!-- 彈出視窗 -->
+    <modal (onClose)="navigate()" (onOpen)="opened()" [cssClass]="cssClass" #number>
+        <modal-header [show-close]="true">
+            <h4 class="modal-title">請勾選供應商</h4>
+        </modal-header>
+        <modal-body>
+          <table class="table table-bordered">
+            <thead>
+                <tr>
+                  <td >
+                      <label class="radio-inline custom-radio nowrap">
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="all">
+                        <span></span>
+                      </label>
+                  </td>
+                  <th> 廠商編號 </th>
+                  <th> 廠商名稱 </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td >
+                      <label class="radio-inline custom-radio nowrap">
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option1">
+                        <span></span>
+                      </label>
+                  </td>
+                  <td>0000171139</td>
+                  <td >臺灣明尼蘇達礦業製造股份有限公司</td>    
+                </tr>
+                <tr>
+                  <td >
+                      <label class="radio-inline custom-radio nowrap">
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                        <span></span>
+                      </label>
+                  </td>
+                  <td> 0000179222</td>
+                  <td > 臺灣明尼蘇達礦業製造股份有限公司</td>    
+                </tr>
+                <tr>
+                  <td >
+                      <label class="radio-inline custom-radio nowrap">
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option3">
+                        <span></span>
+                      </label>
+                  </td>
+                  <td> 0000182246</td>
+                  <td > 臺灣明尼蘇達礦業製造股份有限公司</td>    
+                </tr>
+                <tr>
+                  <td >
+                      <label class="radio-inline custom-radio nowrap">
+                        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option4">
+                        <span></span>
+                      </label>
+                  </td>
+                  <td>0000192009</td>
+                  <td > 臺灣明尼蘇達礦業製造股份有限公司</td>           
+                </tr>
+            </tbody>
+          </table>
+        </modal-body>
+        <modal-footer>
+            <button type="button" class="btn btn-default" data-dismiss="modal" (click)="number.dismiss()">確定</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" (click)="number.dismiss()">清除</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" (click)="number.dismiss()">關閉</button>
+        </modal-footer>
+    </modal>
+
+    <modal (onClose)="navigate()" (onOpen)="opened()" [cssClass]="cssClass" #store>
+        <modal-header [show-close]="true">
+            <h4 class="modal-title">請勾選店別</h4>
+        </modal-header>
+        <modal-body>
+          <details>
+            <summary>
+               <span>99 共用配銷通路(2)</span>
+            </summary>
+            <label class="radio-inline custom-radio nowrap">
+              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="all">
+              <span>全選</span>
+            </label>
+            <label class="radio-inline custom-radio nowrap">
+              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="all">
+              <span>1W97 總部店號(紅利點數)</span>
+            </label>
+            <label class="radio-inline custom-radio nowrap">
+              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="all">
+              <span>1W99 總部店號</span>
+            </label>
+          </details>
+
+          <details>
+            <summary>
+               <span>A0 TLW(36)</span>
+            </summary>
+            <label class="radio-inline custom-radio nowrap">
+              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="all">
+              <span>全選</span>
+            </label>
+            <label class="radio-inline custom-radio nowrap">
+              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="all">
+              <span>1A01 TLW南崁店</span>
+            </label>
+            <label class="radio-inline custom-radio nowrap">
+              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="all">
+              <span>1A02 TLW新莊店</span>
+            </label>
+            <label class="radio-inline custom-radio nowrap">
+              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="all">
+              <span>1A03 TLW大順店</span>
+            </label>
+            <label class="radio-inline custom-radio nowrap">
+              <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="all">
+              <span>1A04 TLW台中店</span>
+            </label>
+          </details>
+        </modal-body>
+        <modal-footer>
+            <button type="button" class="btn btn-default" data-dismiss="modal" (click)="store.dismiss()">確定</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" (click)="store.dismiss()">清除</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" (click)="store.dismiss()">關閉</button>
+        </modal-footer>
+    </modal>
+
+    <modal (onClose)="navigate()" (onOpen)="opened()" [cssClass]="cssClass" #category>
+        <modal-header [show-close]="true">
+            <h4 class="modal-title">商品類別</h4>
+        </modal-header>
+        <modal-body>
+          <ba-text></ba-text>
+        </modal-body>
+        <modal-footer>
+            <button type="button" class="btn btn-default" data-dismiss="modal" (click)="category.dismiss()">確定</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" (click)="category.dismiss()">清除</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal" (click)="category.dismiss()">關閉</button>
+        </modal-footer>
+    </modal>
+
+
